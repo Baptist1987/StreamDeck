@@ -3,6 +3,7 @@ from pathlib import Path
 import pyautogui
 import time
 
+
 def rm1():
     return "ok"
 
@@ -14,25 +15,26 @@ def rm3():
     return "openedNotepad"
 
 def rm4():
-    time.sleep(0.2)
-    pyautogui.hotkey("alt", "f4")
+    safe_hotkey("alt", "f4")
     return "windowClosed"
 
 def rm5():
-    time.sleep(0.2)
-    pyautogui.hotkey("alt","tab")
+    safe_hotkey("alt", "tab")
     return "alt+tab"
 
 def rm6():
-    time.sleep(0.2)
-    pyautogui.hotkey("enter")
+    safe_hotkey("enter")
     return "enter"
 
 def rm7():
-    time.sleep(0.2)
-    pyautogui.hotkey("tab")
+    safe_hotkey("tab")
     return "tab"
 
 def rm8():
     time.sleep(0.2)
     return "rm8done"
+
+    def safe_hotkey(*keys, delay=0.2):
+    """Helper function to execute hotkey with sleep delay to avoid conflicts"""
+    time.sleep(delay)
+    pyautogui.hotkey(*keys)
