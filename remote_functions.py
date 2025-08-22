@@ -34,7 +34,6 @@ def rm8():
     time.sleep(0.2)
     return "rm8done"
 
-    def safe_hotkey(*keys, delay=0.2):
-    """Helper function to execute hotkey with sleep delay to avoid conflicts"""
+def safe_hotkey(*keys, delay=0.2):
     time.sleep(delay)
     pyautogui.hotkey(*keys)
