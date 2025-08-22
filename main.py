@@ -12,9 +12,7 @@ import remote_functions as rmf
 
 
 app = FastAPI()
-# "static" Ordner für CSS, JS, BilderKurzbeschreibung
-# Ein leichtgewichtiges Streamdeck für Windows, umgesetzt mit FastAPI und einer einfachen HTML-Button-Seite.
-# Über den Browser (z. B. Tablet im gleichen Netzwerk) lassen sich vordefinierte Aktionen am PC ausführen – wie Programme starten oder Fenster schließen.
+
 app.mount("/static", StaticFiles(directory="static"), name="static")
 
 Buttons = {"rm1": rmf.rm1,
